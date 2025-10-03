@@ -13,10 +13,10 @@
     }
 
     .resume {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      max-width: 900px;
-      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      max-width: 1000px;
+      margin: 20px auto;
       border: 2px solid #333;
       background: #fff;
     }
@@ -24,7 +24,7 @@
     aside {
       background: #e6e6e6;
       padding: 20px;
-      border-right: 2px solid #333;
+      border-bottom: 2px solid #333;
     }
 
     aside img {
@@ -54,8 +54,9 @@
       margin: 5px 0;
     }
 
-    main {
-      padding: 20px;
+    .right {
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -74,6 +75,10 @@
     header p {
       margin: 5px 0;
       font-style: italic;
+    }
+
+    main {
+      padding: 20px;
     }
 
     section {
@@ -102,13 +107,31 @@
     strong {
       font-weight: bold;
     }
+
+    /* Responsive Layout */
+    @media (min-width: 768px) {
+      .resume {
+        flex-direction: row;
+      }
+
+      aside {
+        flex: 1;
+        border-right: 2px solid #333;
+        border-bottom: none;
+      }
+
+      .right {
+        flex: 2;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="resume">
 
+    <!-- LEFT SIDE -->
     <aside>
-      <img src="./mypic.jpg" alt="Profile Photo">
+      <img src="your-photo.jpg" alt="Profile Photo">
 
       <h2>Profile</h2>
       <p>
@@ -123,7 +146,8 @@
       </div>
     </aside>
 
-    <div>
+    <!-- RIGHT SIDE -->
+    <div class="right">
       <header>
         <h1>Al-Jamie M. Panumpang</h1>
         <p>Student</p>
@@ -165,4 +189,4 @@
 
   </div>
 </body>
-          </html>
+</html>
